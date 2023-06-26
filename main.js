@@ -102,3 +102,43 @@ const init = function(){
 }
 
 document.addEventListener('DOMContentLoaded', init)
+
+
+// html template js
+const supportsTemplate = function() {
+    //create a template element and make sure it has a 'content' property
+    return 'content' in document.createElement('template');
+}
+
+document.addEventListener('DOMContentLoaded', ()=> {
+    if (supportsTemplate()) {
+        //We can use the template element in our HTML
+        // console.log('Templates are supported.');
+        let temp = document.getElementById('myTemplate');
+        let content = temp.content;
+        // console.log(content);
+        document.body.appendChild(content);
+        // document.body.appendChild(content.cloneNode(true));
+        // document.body.appendChild(content.cloneNode(true));
+        // document.body.appendChild(content.cloneNode(true));
+        // document.body.appendChild(content.cloneNode(true));
+        // document.body.appendChild(content.cloneNode(true));
+        // document.body.appendChild(content.cloneNode(true));
+        
+    } else {
+        //Use another method, like manually building the elements.
+        console.log('The else is running');
+        let df = document.createDocumentFragment();
+        let div = document.createElement('div');
+        let h2 = document.createElement('h2');
+        let p = document.createElement('p');
+        h2.textContent = 'A Sub Heading';
+        p.textContent = 'Some dynamically created text.';
+        div.className = 'box';
+        h2.className = 'temp';
+        df.appendChild(div);
+        div.appendChild(h2);
+        div.appendChild(p);
+        document.body.appendChild(df);
+    }
+})
