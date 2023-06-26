@@ -71,6 +71,7 @@ bro()
 
 // Difference btn HtmlCollection and NodeLists
 const difference = document.querySelector(".parent1")
+
 console.log(difference.parentElement)
 console.log(difference.parentNode)
 console.log(difference.children)
@@ -104,6 +105,7 @@ const init = function(){
 document.addEventListener('DOMContentLoaded', init)
 
 
+
 // html template js
 const supportsTemplate = function() {
     //create a template element and make sure it has a 'content' property
@@ -111,12 +113,12 @@ const supportsTemplate = function() {
 }
 
 document.addEventListener('DOMContentLoaded', ()=> {
+
     if (supportsTemplate()) {
         //We can use the template element in our HTML
         // console.log('Templates are supported.');
         let temp = document.getElementById('myTemplate');
         let content = temp.content;
-        // console.log(content);
         document.body.appendChild(content);
         // document.body.appendChild(content.cloneNode(true));
         // document.body.appendChild(content.cloneNode(true));
@@ -134,6 +136,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         let p = document.createElement('p');
         h2.textContent = 'A Sub Heading';
         p.textContent = 'Some dynamically created text.';
+        console.log(p)
         div.className = 'box';
         h2.className = 'temp';
         df.appendChild(div);
