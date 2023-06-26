@@ -68,3 +68,5 @@ let bro = function () {
     console.log('Your name');
 }
 bro()
+
+// Difference btn HtmlCollection and NodeLists
