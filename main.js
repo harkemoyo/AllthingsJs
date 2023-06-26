@@ -36,7 +36,7 @@ console.log(x)
 // this is a function expression
 
 
-// hoisting is the difference btn function statement and expression 
+// hoisting is the diff btn function statement and expression 
 // Person()
 // mark();
 let mark = function () {
@@ -70,3 +70,14 @@ let bro = function () {
 bro()
 
 // Difference btn HtmlCollection and NodeLists
+const difference = document.querySelector(".parent1")
+console.log(difference.parentElement)
+console.log(difference.parentNode)
+console.log(difference.children)
+console.log(difference.childNodes)
+
+const diff = document.querySelector(".parent2")
+console.log(diff.parentElement)
+console.log(diff.parentNode)
+console.log(diff.children)
+console.log(diff.childNodes)
