@@ -72,6 +72,7 @@ bro()
 // Difference btn HtmlCollection and NodeLists
 const difference = document.querySelector(".parent1")
 
+console.log(difference[0]);
 console.log(difference.parentElement)
 console.log(difference.parentNode)
 console.log(difference.children)
@@ -82,6 +83,14 @@ console.log(diff.parentElement)
 console.log(diff.parentNode)
 console.log(diff.children)
 console.log(diff.childNodes)
+
+// queryselectorAll
+const classEl = document.getElementsByClassName('text')
+console.log(classEl)
+const selectAll = document.querySelectorAll(".text")
+
+console.log(selectAll);
+document.querySelector('p:nth-of-type(1)').className = 'text';
 
 
 // CloneNode.j
@@ -97,6 +106,7 @@ const init = function(){
     //}
     
     temp = document.querySelector('[type="text/html"]');
+
     cln = temp.cloneNode(true);
     div2 = cln.textContent;
     t2.innerHTML = div2;
