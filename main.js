@@ -72,11 +72,11 @@ bro()
 // Difference btn HtmlCollection and NodeLists
 const difference = document.querySelector(".parent1")
 
-console.log(difference[0]);
-console.log(difference.parentElement)
-console.log(difference.parentNode)
-console.log(difference.children)
-console.log(difference.childNodes)
+// console.log(difference[0]);
+// console.log(difference.parentElement)
+// console.log(difference.parentNode)
+// console.log(difference.children)
+// console.log(difference.childNodes)
 
 const diff = document.querySelector(".parent2")
 console.log(diff.parentElement)
@@ -159,16 +159,27 @@ console.log(diff.childNodes)
 
 // Difference between children and childNode
 document.addEventListener('DOMContentLoaded', () => {
+    let parentEl = document.body.parentElement
+    console.log(parentEl);
+    let pNode = document.body.parentNode
+    console.log(pNode);
     let children = document.body.children; //Element Nodes
     let nodes = document.body.childNodes; //ALL nodes - element, text, comments..
+    
+    console.log('parentNode', pNode.length);
     console.log('children', children.length);
     console.log('childnodes', nodes.length);
+    
 
+    // looping through children
     [].forEach.call(children, (child) => {
       console.log(child);
     });
 
+
+    //   looping through childNode
     nodes.forEach((node) => {
-      //console.log(node);
+      console.log(node);
     });
+  
   });
