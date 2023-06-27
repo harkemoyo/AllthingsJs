@@ -85,51 +85,51 @@ console.log(diff.children)
 console.log(diff.childNodes)
 
 // queryselectorAll
-const classEl = document.getElementsByClassName('text')
-console.log(classEl)
-const selectAll = document.querySelectorAll(".text")
+// const classEl = document.getElementsByClassName('text')
+// console.log(classEl)
+// const selectAll = document.querySelectorAll(".text")
 
-console.log(selectAll);
-document.querySelector('p:nth-of-type(1)').className = 'text';
+// console.log(selectAll);
+// document.querySelector('p:nth-of-type(1)').className = 'text';
 
 
 // CloneNode.j
 
-const init = function(){
-    let t1, t2, div1, temp, div2, cln
-    t1 = document.getElementById('target1');
-    t2 = document.getElementById('target2');
+// const init = function(){
+//     let t1, t2, div1, temp, div2, cln
+//     t1 = document.getElementById('target1');
+//     t2 = document.getElementById('target2');
     
-    div1 = document.querySelector('.advertisement');
+//     div1 = document.querySelector('.advertisement');
     //for(let i=0; i<5; i++){
-        t1.appendChild(div1.cloneNode(true) );
+        // t1.appendChild(div1.cloneNode(true) );
     //}
     
-    temp = document.querySelector('[type="text/html"]');
+//     temp = document.querySelector('[type="text/html"]');
 
-    cln = temp.cloneNode(true);
-    div2 = cln.textContent;
-    t2.innerHTML = div2;
-}
+//     cln = temp.cloneNode(true);
+//     div2 = cln.textContent;
+//     t2.innerHTML = div2;
+// }
 
-document.addEventListener('DOMContentLoaded', init)
+// document.addEventListener('DOMContentLoaded', init)
 
 
 
 // html template js
-const supportsTemplate = function() {
+// const supportsTemplate = function() {
     //create a template element and make sure it has a 'content' property
-    return 'content' in document.createElement('template');
-}
+//     return 'content' in document.createElement('template');
+// }
 
-document.addEventListener('DOMContentLoaded', ()=> {
+// document.addEventListener('DOMContentLoaded', ()=> {
 
-    if (supportsTemplate()) {
+    // if (supportsTemplate()) {
         //We can use the template element in our HTML
         // console.log('Templates are supported.');
-        let temp = document.getElementById('myTemplate');
-        let content = temp.content;
-        document.body.appendChild(content);
+        // let temp = document.getElementById('myTemplate');
+        // let content = temp.content;
+        // document.body.appendChild(content);
         // document.body.appendChild(content.cloneNode(true));
         // document.body.appendChild(content.cloneNode(true));
         // document.body.appendChild(content.cloneNode(true));
@@ -137,21 +137,38 @@ document.addEventListener('DOMContentLoaded', ()=> {
         // document.body.appendChild(content.cloneNode(true));
         // document.body.appendChild(content.cloneNode(true));
         
-    } else {
+    // } else {
         //Use another method, like manually building the elements.
-        console.log('The else is running');
-        let df = document.createDocumentFragment();
-        let div = document.createElement('div');
-        let h2 = document.createElement('h2');
-        let p = document.createElement('p');
-        h2.textContent = 'A Sub Heading';
-        p.textContent = 'Some dynamically created text.';
-        console.log(p)
-        div.className = 'box';
-        h2.className = 'temp';
-        df.appendChild(div);
-        div.appendChild(h2);
-        div.appendChild(p);
-        document.body.appendChild(df);
-    }
-})
+//         console.log('The else is running');
+//         let df = document.createDocumentFragment();
+//         let div = document.createElement('div');
+//         let h2 = document.createElement('h2');
+//         let p = document.createElement('p');
+//         h2.textContent = 'A Sub Heading';
+//         p.textContent = 'Some dynamically created text.';
+//         console.log(p)
+//         div.className = 'box';
+//         h2.className = 'temp';
+//         df.appendChild(div);
+//         div.appendChild(h2);
+//         div.appendChild(p);
+//         document.body.appendChild(df);
+//     }
+// })
+
+
+// Difference between children and childNode
+document.addEventListener('DOMContentLoaded', () => {
+    let children = document.body.children; //Element Nodes
+    let nodes = document.body.childNodes; //ALL nodes - element, text, comments..
+    console.log('children', children.length);
+    console.log('childnodes', nodes.length);
+
+    [].forEach.call(children, (child) => {
+      console.log(child);
+    });
+
+    nodes.forEach((node) => {
+      //console.log(node);
+    });
+  });
