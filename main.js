@@ -159,22 +159,23 @@ console.log(diff.childNodes)
 
 // Difference between children and childNode
 document.addEventListener('DOMContentLoaded', () => {
-    let parentEl = document.body.parentElement
-    console.log(parentEl);
-    let pNode = document.body.parentNode
-    console.log(pNode);
-    let children = document.body.children; //Element Nodes
-    let nodes = document.body.childNodes; //ALL nodes - element, text, comments..
+    // let parentEl = document.body.parentElement 
+    // let pNode = document.body.parentNode
+    let parentEl = document.documentElement.parentElement
+    let pNode = document.documentElement.parentNode.nodeType
+    let children = document.documentElement.children; //Element Nodes
+    let nodes = document.documentElement.childNodes; //ALL nodes - element, text, comments..
     
-    console.log('parentNode', pNode.length);
-    console.log('children', children.length);
+    // console.log('parentNode', pNode);
+    // console.log('parentElement', parentEl);
+    // console.log('children', children.length);
     console.log('childnodes', nodes.length);
     
 
     // looping through children
-    [].forEach.call(children, (child) => {
-      console.log(child);
-    });
+    // [].forEach.call(children, (child) => {
+    //   console.log(child);
+    // });
 
 
     //   looping through childNode
